@@ -1,0 +1,6 @@
+[submodule "training-tracker"]
+	path = training-tracker
+	url = git@github.com:ShyftSolutions/training-tracker.git
+[submodule "training-tracker-gui"]
+	path = training-tracker-gui
+	url = git@github.com:cojense/training-tracker-gui.git

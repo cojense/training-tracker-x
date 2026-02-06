@@ -1,0 +1,63 @@
+2026-01-09 16:01:49,082 - Starting worker 'Connors-MacBook-Air.local#9061' with the following tasks:
+2026-01-09 16:01:49,082 - * trace(message: str, ...)
+2026-01-09 16:01:49,082 - * fail(message: str, ...)
+2026-01-09 16:01:49,082 - * sleep(seconds: float, ...)
+2026-01-09 16:01:49,086 - Processing request of type ListPromptsRequest
+2026-01-09 16:01:49,088 - Processing request of type ListToolsRequest
+2026-01-09 16:01:49,091 - Processing request of type ListResourcesRequest
+2026-01-09 16:02:45,219 - Processing request of type CallToolRequest
+2026-01-09 16:02:45,220 - TOOL CALLED: local_summarize
+2026-01-09 16:02:45,220 - Target: training-tracker-gui/package.json
+2026-01-09 16:02:45,220 - Instruction: List out the main dependencies.
+2026-01-09 16:04:40,520 - Starting worker 'Connors-MacBook-Air.local#9725' with the following tasks:
+2026-01-09 16:04:40,520 - * trace(message: str, ...)
+2026-01-09 16:04:40,520 - * fail(message: str, ...)
+2026-01-09 16:04:40,520 - * sleep(seconds: float, ...)
+2026-01-09 16:04:40,525 - Processing request of type ListPromptsRequest
+2026-01-09 16:04:40,526 - Processing request of type ListToolsRequest
+2026-01-09 16:04:40,529 - Processing request of type ListResourcesRequest
+2026-01-09 16:06:05,966 - Starting worker 'Connors-MacBook-Air.local#10080' with the following tasks:
+2026-01-09 16:06:05,966 - * trace(message: str, ...)
+2026-01-09 16:06:05,966 - * fail(message: str, ...)
+2026-01-09 16:06:05,966 - * sleep(seconds: float, ...)
+2026-01-09 16:06:05,970 - Processing request of type ListPromptsRequest
+2026-01-09 16:06:05,971 - Processing request of type ListToolsRequest
+2026-01-09 16:06:05,975 - Processing request of type ListResourcesRequest
+2026-01-09 16:07:04,897 - Processing request of type CallToolRequest
+2026-01-09 16:07:04,898 - TOOL CALLED: local_summarize
+2026-01-09 16:07:04,898 - Target: training-tracker-gui/src/App.tsx
+2026-01-09 16:07:04,898 - Instruction: Summarize this file and check if it mentions any specific providers.
+2026-01-09 16:13:05,841 - Starting worker 'Connors-MacBook-Air.local#11066' with the following tasks:
+2026-01-09 16:13:05,841 - * trace(message: str, ...)
+2026-01-09 16:13:05,841 - * fail(message: str, ...)
+2026-01-09 16:13:05,841 - * sleep(seconds: float, ...)
+2026-01-09 16:13:05,845 - Processing request of type ListPromptsRequest
+2026-01-09 16:13:05,846 - Processing request of type ListToolsRequest
+2026-01-09 16:13:05,847 - Processing request of type ListResourcesRequest
+2026-01-09 16:13:27,652 - Starting worker 'Connors-MacBook-Air.local#11257' with the following tasks:
+2026-01-09 16:13:27,652 - * trace(message: str, ...)
+2026-01-09 16:13:27,652 - * fail(message: str, ...)
+2026-01-09 16:13:27,652 - * sleep(seconds: float, ...)
+2026-01-09 16:13:27,657 - Processing request of type ListPromptsRequest
+2026-01-09 16:13:27,657 - Processing request of type ListToolsRequest
+2026-01-09 16:13:27,661 - Processing request of type ListResourcesRequest
+2026-01-09 16:13:51,574 - Starting worker 'Connors-MacBook-Air.local#11509' with the following tasks:
+2026-01-09 16:13:51,574 - * trace(message: str, ...)
+2026-01-09 16:13:51,574 - * fail(message: str, ...)
+2026-01-09 16:13:51,574 - * sleep(seconds: float, ...)
+2026-01-09 16:13:51,578 - Processing request of type ListPromptsRequest
+2026-01-09 16:13:51,579 - Processing request of type ListToolsRequest
+2026-01-09 16:13:51,582 - Processing request of type ListResourcesRequest
+2026-01-09 16:17:27,101 - Starting worker 'Connors-MacBook-Air.local#12166' with the following tasks:
+2026-01-09 16:17:27,101 - * trace(message: str, ...)
+2026-01-09 16:17:27,101 - * fail(message: str, ...)
+2026-01-09 16:17:27,101 - * sleep(seconds: float, ...)
+2026-01-09 16:17:27,106 - Processing request of type ListPromptsRequest
+2026-01-09 16:17:27,107 - Processing request of type ListToolsRequest
+2026-01-09 16:17:27,110 - Processing request of type ListResourcesRequest
+2026-01-09 16:17:34,732 - Processing request of type CallToolRequest
+2026-01-09 16:17:34,733 - TOOL CALLED: local_summarize
+2026-01-09 16:17:34,733 - Target: training-tracker-gui/package.json
+2026-01-09 16:17:34,733 - Instruction: List out the main dependencies.
+2026-01-09 16:17:58,427 - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2026-01-09 16:17:58,428 - Ollama processing complete. Returning result.
