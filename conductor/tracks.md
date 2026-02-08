@@ -9,5 +9,10 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: File Lifecycle Verification (Upload, Retrieve, Modify)**
+- [x] **Track: File Lifecycle Verification (Upload, Retrieve, Modify)**
 *Link: [./tracks/file_lifecycle_20260206/](./tracks/file_lifecycle_20260206/)*
+
+---
+
+- [~] **Track: Functional Parity - User Detail and Navigation**
+*Link: [./tracks/user_detail_parity_20260206/](./tracks/user_detail_parity_20260206/)*
