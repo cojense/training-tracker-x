@@ -49,3 +49,6 @@ TRAINING_TRACKER_GUI : {
 
 
 ---
+
+- [x] **Track: GUI Scaffolding & Build Configuration**
+*Link: [./tracks/gui_scaffold_20260209/](./tracks/gui_scaffold_20260209/)*
