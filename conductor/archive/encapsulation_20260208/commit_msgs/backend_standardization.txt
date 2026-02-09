@@ -1,0 +1,6 @@
+feat(infra): Standardize native startup and remove host-specific paths
+
+- Updated run.bash to use project-relative paths and detect .venv/ correctly.
+- Enhanced docker-compose.yml with automatic database initialization and seeding.
+- Added comprehensive_seed.sql for deep testing of manager/supervisor hierarchies.
+- Resolved macOS/Docker volume contention by making SQLite WAL mode optional.

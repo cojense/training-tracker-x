@@ -14,9 +14,11 @@
 - **Build Tool:** Vite
 - **UI Library:** Material UI (MUI) 7
 - **Package Manager:** Bun
+- **Production Server:** Nginx (Containerized)
 - **Tooling:** ESLint, Prettier
 
 ## Infrastructure & Security
-- **Containerization:** Docker, Docker Compose
+- **Containerization:** Docker, Docker Compose (Multi-stage builds)
+- **Orchestration:** Root-level Bash/Compose scripts for unified management
 - **Cloud Services:** AWS (S3 for document storage, Secrets Manager)
 - **Architecture:** Hybrid (Flask API/Legacy UI + React SPA)

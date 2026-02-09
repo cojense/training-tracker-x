@@ -1,0 +1,8 @@
+TRAINING-TRACKER: FEAT(sync) - Standardize project orchestration and encapsulation
+
+- Created root-level run.bash for unified service management.
+- Implemented root-level docker-compose.yml for full-stack orchestration.
+- Containerized the React frontend with a multi-stage Bun/Nginx Dockerfile.
+- Standardized submodule run.bash scripts for native development.
+- Added root-level README.md and updated submodule documentation.
+- Fixed volume mapping and initialization logic in the root orchestration.

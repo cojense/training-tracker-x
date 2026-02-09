@@ -20,6 +20,7 @@ The ShyftDev Training Tracker is a secure, centralized system designed to safely
 ## Key Features
 - **Modern GUI:** A TypeScript/React frontend using Material UI for a professional and consistent user experience.
 - **RESTful API:** A Python/Flask backend providing the data layer and business logic for the frontend.
+- **Unified Orchestration:** Standardized startup and deployment workflows for development and production.
 - **Automated Workflows:** Service-backed electronic approval processes for completed trainings and certificate management.
 - **Secure Document Storage:** Management of uploaded certificates and attachments using AWS infrastructure.
 - **Authentication:** Secure access via Google OAuth restricted to the organization domain.
