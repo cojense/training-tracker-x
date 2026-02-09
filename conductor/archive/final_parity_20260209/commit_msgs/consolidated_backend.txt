@@ -1,0 +1,7 @@
+feat(sync): Complete final parity and stabilize API layer
+
+- Stabilized development environment with mock OAuth and project-relative paths.
+- Fixed critical API gaps for Projects (added GET/PUT) and Groups (added member list).
+- Resolved CORS preflight 404s by removing duplicate /api blueprint prefix.
+- Fixed 500 errors in Group details by handling optional/null suspense dates in DB row parsing.
+- Improved database initialization with automatic seeding of hierarchical test data.

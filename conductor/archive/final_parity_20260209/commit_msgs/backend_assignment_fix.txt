@@ -1,0 +1,3 @@
+fix(api): Handle optional suspense_date in training assignments
+
+The backend API would fail with a 500 error if 'suspense_date' was not provided or was null, as the database layer attempted to call .isoformat() on a None object. This fix makes the field optional in the DB logic and ensures 'project_id' is correctly typed as an integer.

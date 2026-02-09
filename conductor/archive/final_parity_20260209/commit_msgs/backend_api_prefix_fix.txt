@@ -1,0 +1,3 @@
+fix(api): Remove duplicate /api prefix from blueprint registration
+
+The api_blueprint was defined with url_prefix="/api" and then registered in app.py with the same prefix, resulting in all API routes being served under /api/api/*. This caused 404 errors during CORS preflight requests from the frontend, which expects routes at /api/*.

@@ -1,0 +1,3 @@
+fix(db): Handle null suspense_date during row parsing
+
+Updated assignment_from_row and assigned_training_from_row to safely handle NULL suspense_date values from the database. This prevents TypeError when calling date.fromisoformat on a None object, which was causing 500 errors on Group detail views.
