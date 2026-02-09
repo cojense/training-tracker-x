@@ -1,0 +1,6 @@
+TRAINING-TRACKER: FEAT(sync) - Implement generic User Detail view and unified navigation
+
+- Synced submodules to include generic User Detail API and UI components.
+- Integrated cross-view linking (User List -> Profile, Reports -> Profile).
+- Enforced role-based access for detailed employee records in the API.
+- Updated Conductor plan to reflect track completion.

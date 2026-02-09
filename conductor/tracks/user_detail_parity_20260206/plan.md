@@ -23,7 +23,7 @@ Update existing views to link to the new User Detail page.
 ## Phase 3: Verification & Cleanup
 Ensure permissions and data loading work correctly across all roles.
 
-- [ ] Task: Verify that a regular employee receives a 403 or redirect when attempting to access another user's page.
-- [ ] Task: Verify that Managers can successfully view details for users in their reports.
-- [ ] Task: Ensure no regressions in the "Personal Profile" view.
+- [x] Task: Verify that a regular employee receives a 403 or redirect when attempting to access another user's page.
+- [x] Task: Verify that Managers can successfully view details for users in their reports.
+- [x] Task: Ensure no regressions in the "Personal Profile" view.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Final Verification' (Protocol in workflow.md)
