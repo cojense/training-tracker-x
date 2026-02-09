@@ -14,12 +14,16 @@ show_help() {
 
 cleanup() {
     echo "Stopping all services..."
+    docker-compose down
     # Kill the entire process group to ensure children die
     kill -- -$$ 2>/dev/null
     exit
 }
 
 trap cleanup SIGINT SIGTERM
+
+# Ensure a clean start by taking down any existing docker-compose services
+docker-compose down
 
 START_BACKEND=false
 START_GUI=false

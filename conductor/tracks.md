@@ -51,4 +51,41 @@ TRAINING_TRACKER_GUI : {
 ---
 
 - [x] **Track: GUI Scaffolding & Build Configuration**
+
 *Link: [./tracks/gui_scaffold_20260209/](./tracks/gui_scaffold_20260209/)*
+
+
+
+---
+
+
+
+- [x] **Track: GUI Hooks & Context Migration**
+
+
+
+*Link: [./tracks/gui_migrate_hooks_20260209/](./tracks/gui_migrate_hooks_20260209/)*
+
+
+
+
+
+
+
+---
+
+
+
+
+
+
+
+- [ ] **Track: GUI Service Layer Migration & Utility Cleanup**
+
+
+
+*Link: [./tracks/gui_migrate_services_20260209/](./tracks/gui_migrate_services_20260209/)*
+
+
+
+

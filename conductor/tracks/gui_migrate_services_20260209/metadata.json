@@ -1,0 +1,8 @@
+{
+  "track_id": "gui_migrate_services_20260209",
+  "type": "refactor",
+  "status": "new",
+  "created_at": "2026-02-09T19:00:00Z",
+  "updated_at": "2026-02-09T19:00:00Z",
+  "description": "Decompose monolithic api.ts into domain-specific services in src/services/ and clean up utilities."
+}
