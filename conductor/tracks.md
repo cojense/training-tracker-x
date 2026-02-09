@@ -80,7 +80,7 @@ TRAINING_TRACKER_GUI : {
 
 
 
-- [ ] **Track: GUI Service Layer Migration & Utility Cleanup**
+- [x] **Track: GUI Service Layer Migration & Utility Cleanup**
 
 
 
