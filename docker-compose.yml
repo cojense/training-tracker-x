@@ -1,0 +1,43 @@
+services:
+  backend:
+    build:
+      context: ./training-tracker
+      target: deploy_container
+    environment:
+      - FLASK_ENV=development
+      - APP_SECRET=dev-secret-change-in-production
+      - SQLITE_WAL=false
+      - CONNECT_STRING=sqlite:////opt/trainingtracker/db/training.db
+      - BACKEND_PORT=5001
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./training-tracker/db:/opt/trainingtracker/db
+    command:
+      - sh
+      - -c
+      - |
+        set -e
+        DB_DIR="/opt/trainingtracker/db"
+        DB_FILE="$$DB_DIR/training.db"
+        if [ ! -f "$$DB_FILE" ] || [ ! -s "$$DB_FILE" ]; then
+          echo "Initializing database at $$DB_FILE..."
+          mkdir -p "$$DB_DIR"
+          sqlite3 "$$DB_FILE" < /opt/trainingtracker/sql/create_db.sql
+          sqlite3 "$$DB_FILE" < /opt/trainingtracker/sql/feb_2021_schema_update.sql
+          sqlite3 "$$DB_FILE" < /opt/trainingtracker/sql/nov_2022_schema_update.sql
+          sqlite3 "$$DB_FILE" < /opt/trainingtracker/sql/march_2024_schema_update.sql
+          sqlite3 "$$DB_FILE" < /opt/trainingtracker/sql/populate_db.sql
+          sqlite3 "$$DB_FILE" < /opt/trainingtracker/sql/load_sample_data.sql
+          sqlite3 "$$DB_FILE" < /opt/trainingtracker/sql/comprehensive_seed.sql
+          echo "Database initialized successfully."
+        fi
+        exec gunicorn --bind=0.0.0.0:5001 --workers=2 trainingbackend.tracker:app
+
+  frontend:
+    build:
+      context: ./training-tracker-gui
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
