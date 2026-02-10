@@ -84,7 +84,67 @@ TRAINING_TRACKER_GUI : {
 
 
 
+
+
+
+
 *Link: [./tracks/gui_migrate_services_20260209/](./tracks/gui_migrate_services_20260209/)*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- [x] **Track: GUI Test Suite Relocation**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*Link: [./tracks/gui_migrate_tests_20260209/](./tracks/gui_migrate_tests_20260209/)*
+
+
+
+
+
+
+
+
 
 
 
