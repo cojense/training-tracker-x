@@ -1,0 +1,1 @@
+TRAINING-TRACKER: AFFECTS(React UI) - Chore -> Update training-tracker-gui submodule reference after Phase 2 refactor

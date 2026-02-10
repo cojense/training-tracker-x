@@ -137,3 +137,9 @@ TRAINING_TRACKER_GUI : {
 
 
 *Link: [./tracks/gui_migrate_tests_20260209/](./tracks/gui_migrate_tests_20260209/)*
+
+---
+
+- [~] **Track: Consolidating the `training-tracker-gui/src/views/` directory**
+*Link: [./tracks/gui_views_consolidation_20260210/](./tracks/gui_views_consolidation_20260210/)*
+

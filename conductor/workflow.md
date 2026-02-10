@@ -292,8 +292,20 @@ A task is complete when:
 
 ## Continuous Improvement
 
+
+
+### Track Idea Management
+
+To ensure valuable ideas for future development are not lost, any track ideas that arise during the course of a track but are deemed out of scope for the current track should be recorded. These ideas are stored in `conductor/track_ideas.json` as a dictionary, where keys are the `track_id` of the originating track and values are lists of one-line summaries for potential future tracks.
+
+
+
 - Review workflow weekly
+
 - Update based on pain points
+
 - Document lessons learned
+
 - Optimize for user happiness
+
 - Keep things simple and maintainable
