@@ -138,14 +138,7 @@ TRAINING_TRACKER_GUI : {
 
 *Link: [./tracks/gui_migrate_tests_20260209/](./tracks/gui_migrate_tests_20260209/)*
 
+---
 
-
-
-
-
-
-
-
-
-
-
+- [x] **Track: Unused Code Elimination**
+*Link: [./tracks/unused_code_elimination_20260209/](./tracks/unused_code_elimination_20260209/)*
