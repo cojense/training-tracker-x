@@ -1,7 +1,0 @@
-chore(conductor): Update Conductor tracks and workflow, integrate GUI refactor.
-- Finalize GUI Test Suite Relocation track.
-- Initialize Unused Code Elimination track (plan, spec, metadata).
-- Document depcheck alias resolution limitation.
-- Update `training-tracker-gui` submodule to include unused code removal and refactoring.
-- Streamline Conductor workflow by removing explicit git commit and note attachment steps from task and phase protocols.
-- Add `.env` to root `.geminiignore`.

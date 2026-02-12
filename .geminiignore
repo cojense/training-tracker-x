@@ -1,2 +1,27 @@
 .env
+# --- System & Dependencies ---
+.git/
+node_modules/
+__pycache__/
+venv/
+.DS_Store
 
+# --- Gemini/Conductor Internals ---
+# We want the agent to see the PLAN, but not the LOGS
+.gemini/logs/
+.gemini/debug.log
+.gemini/cache/
+
+# --- Conductor Noise ---
+# Ignore archives (if any survived)
+conductor/archive/
+conductor/commit_msgs/
+
+# Ignore the 'staging' file to prevent the agent from reading old drafts as truth
+conductor/COMMIT_EDITMSG.txt
+
+# --- Repo Isolation ---
+# When working from Root, don't read the deep guts of sub-repos unless necessary.
+# (Optional: Un-comment if the context gets too large)
+# training-tracker/.gemini/
+# training-tracker-gui/.gemini/

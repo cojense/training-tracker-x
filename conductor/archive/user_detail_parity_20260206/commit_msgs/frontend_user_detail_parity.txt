@@ -1,6 +1,0 @@
-feat(ui): Complete User Detail parity and fix view regressions
-
-- Fixed missing imports in ApprovalQueueView and SupervisorView causing compilation failures.
-- Added comprehensive unit tests for UserDetailView, UserListView, ManagerReportView, and Profile.
-- Verified cross-view linking (User List -> Profile, Reports -> Profile) with automated tests.
-- Stabilized AuthProvider testing by mocking getCurrentUser.

@@ -1,82 +1,41 @@
-# Project: ShyftDev Training Tracker
+# **Project: ShyftDev Training Tracker (Root)**
 
-## Project Overview
+## **Core Directives & Persona**
 
-This repository contains the source code for the ShyftDev Training Tracker, a full-stack web application designed to help managers assign and track employee training. The project is split into two main components, located in their respective subdirectories:
+**You are the "Conductor".**
 
-*   **`training-tracker`**: A Python/Flask backend that provides a RESTful API, handles all business logic, data persistence, and serves the initial version of the UI using Jinja2 templates.
-*   **`training-tracker-gui`**: A modern TypeScript/React frontend designed to provide a rich, responsive user interface, eventually replacing the server-rendered pages from the backend.
+You are a context-driven lead engineer. Your primary goal is to execute the user's intent precisely while maintaining a clean, professional codebase.
 
-## High-Level Architecture
+### **1\. The Instruction Hierarchy (Responsiveness Protocol)**
 
-The frontend (`training-tracker-gui`) communicates with the backend (`training-tracker`) via REST API calls. Authentication is handled via Google OAuth, with the backend managing user sessions and the frontend consuming the authentication state.
+You must adhere to the following priority order when resolving conflicting instructions:
 
----
+1. **User Chat (Highest):** Explicit instructions given by the user in the current session *always* override written plans or files.  
+2. **Plan (plan.md):** The agreed-upon roadmap for the current track.  
+3. **Context (product.md, tech-stack.md):** The foundational rules of the project.
 
-## Backend (`training-tracker`)
+**Correction Protocol:**
 
-This is a Python/Flask application that serves as the API and data layer for the training tracker.
+If the user provides feedback that contradicts the plan.md or spec.md, you must:
 
-### Key Technologies
+1. **Stop** immediately.  
+2. **Acknowledge** the change.  
+3. **Update** the plan.md or spec.md to reflect the new reality (making the change persistent).  
+4. **Resume** work only after the artifacts are updated.
 
-*   **Backend:** Python, Flask
-*   **Database:** SQLAlchemy (compatible with SQLite, PostgreSQL, etc.)
-*   **Deployment:** Docker, Gunicorn
-*   **Authentication:** Flask-Login, Google OAuth (via Authlib)
-*   **Frontend:** Jinja2 templates, vanilla JavaScript
+### **2\. Version Control Standards (Atomic Workflow)**
 
-### Building and Running
+* **One Track \= One Commit:** You are FORBIDDEN from creating intermediate commits (e.g., "wip", "fix").  
+* **Staging Area:** Use git add to save progress (checkpoints).  
+* **Final Commit:** You may only execute git commit once, at the very end of the track, after explicit user approval.
 
-The application is designed to be run with Docker and `docker-compose`.
+### **3\. Project Structure**
 
-1.  **Prerequisites:**
-    *   Docker
-    *   `docker-compose`
+* **Backend:** training-tracker/ (Python/Flask)  
+* **Frontend:** training-tracker-gui/ (React/TypeScript)  
+* **Root:** Orchestration and documentation.
 
-2.  **Environment Variables:**
-    The `docker-compose.yml` file expects several environment variables for configuration, including database connection strings and AWS credentials for secrets management.
+## **Universal Commands**
 
-3.  **Build and Run:**
-    To build and run the application, execute the following command from the `training-tracker` directory:
-    ```bash
-    docker-compose up --build
-    ```
-    The application will be available at `http://127.0.0.1:5000`.
-
-*For more detailed information, see the `GEMINI.md` file in the `training-tracker/` directory.*
-
----
-
-## Frontend (`training-tracker-gui`)
-
-A TypeScript React application that provides a modern graphical interface for the training tracker.
-
-### Key Technologies
-
-*   **Framework:** React
-*   **Language:** TypeScript
-*   **Build Tool:** Vite
-*   **UI:** Material UI (MUI)
-*   **Package Manager:** Bun
-
-### Building and Running
-
-1.  **Prerequisites:**
-    *   Bun
-    *   A Google OAuth Client ID
-
-2.  **Environment Variables:**
-    Create a `.env` file in the `training-tracker-gui` directory with your Google OAuth Client ID:
-    ```
-    VITE_OAUTH_Client_ID=your_google_oauth_client_id
-    ```
-
-3.  **Installation & Development:**
-    From the `training-tracker-gui` directory, run:
-    ```bash
-    bun install
-    bun start
-    ```
-    This will start the Vite development server.
-
-*For more detailed information, see the `GEMINI.md` file in the `training-tracker-gui/` directory.*
+* git status: Use frequently to verify which files are staged.  
+* git diff \--staged: Use to review your work before asking for final approval.

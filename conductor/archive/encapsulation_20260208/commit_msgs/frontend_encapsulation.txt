@@ -1,5 +1,0 @@
-feat(infra): Containerize frontend and provide native setup scripts
-
-- Created multi-stage Dockerfile (Bun build -> Nginx) for production deployment.
-- Added run.bash for native startup via Bun.
-- Created README.md with essential startup and Docker instructions.

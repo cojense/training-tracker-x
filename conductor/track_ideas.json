@@ -2,6 +2,7 @@
   "gui_views_consolidation_20260210": [
     "Detailed refactoring or re-implementation of the internal logic within individual view components.",
     "Optimization of existing component logic beyond what is necessary for file relocation and structural organization.",
-    "Creation of new features or modification of existing application functionality."
-  ],
+    "Creation of new features or modification of existing application functionality.",
+    "Backend bug: Fix 500 Internal Server Error when recording training events via /api/events endpoint."
+  ]
 }

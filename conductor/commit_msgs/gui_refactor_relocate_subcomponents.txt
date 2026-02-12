@@ -1,4 +1,0 @@
-GUI-Refactoring: REFACTOR(views) - Relocate sub-components from views to components directories.
-
-- Moved components (Approve.tsx, Groups.tsx, Manager.tsx, Projects.tsx, Supervisor.tsx, Users.tsx)
-  from `src/views/` to `src/components/{ViewName}/` directories.

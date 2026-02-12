@@ -1,8 +1,0 @@
-{
-  "track_id": "file_lifecycle_20260206",
-  "type": "feature",
-  "status": "new",
-  "created_at": "2026-02-06T16:00:00Z",
-  "updated_at": "2026-02-06T16:00:00Z",
-  "description": "Can you ensure that the file upload/modification/retreival works as expected on the react gui (99% sure it works on the flask ui)?"
-}

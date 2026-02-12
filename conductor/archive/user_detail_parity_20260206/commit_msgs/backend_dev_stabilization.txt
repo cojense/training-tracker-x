@@ -1,7 +1,0 @@
-feat(dev): Stabilize development environment and database initialization
-
-- Updated config.py to provide mock OAuth credentials in development mode.
-- Modified db.py to make SQLite WAL mode optional (fixes 'unable to open database' on macOS).
-- Enhanced docker-compose.yml with automatic database initialization and comprehensive seeding.
-- Created comprehensive_seed.sql with hierarchical test data (Justin -> Bob -> Charlie/David).
-- Updated Dockerfile to include sqlite3 and required directories in the deploy stage.

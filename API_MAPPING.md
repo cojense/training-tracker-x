@@ -27,15 +27,15 @@ This document provides a reference for mapping legacy Flask Web UI routes to the
 | Record Event | `/event/record` | `/events/record` | `POST /api/events` |
 | Approval Queue | `/unapproved_training` | `/approval` | `GET /api/approvals` |
 
-## Environment Variables
+## Environment Variables (`*/.env*` | `~/.zshrc` | `~/.bashrc`)
 
-### Backend (`training-tracker/.env`)
+### Backend(`training-tracker/.env`|`training-tracker/.env.example`)
 - `BACKEND_PORT`: Default `5001`.
 - `CORS_ALLOWED_ORIGINS`: Comma-separated list (e.g., `http://localhost:5173`).
 - `USE_S3_STORAGE`: Set to `true` to enable AWS S3 for certificates.
 - `AWS_DEFAULT_REGION`: AWS region for S3 (e.g., `us-east-2`).
 - `CERTIFICATE_BUCKET`: S3 bucket name for storage.
 
-### Frontend (`training-tracker-gui/.env`)
+### Frontend (`training-tracker-gui/.env` | `training-tracker-gui/.env.example`)
 - `VITE_API_BASE_URL`: Full URL to the API (e.g., `http://localhost:5001/api`).
 - `VITE_BACKEND_URL`: Base URL for redirects (e.g., `http://localhost:5001`).

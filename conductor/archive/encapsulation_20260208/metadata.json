@@ -1,8 +1,0 @@
-{
-  "track_id": "encapsulation_20260208",
-  "type": "chore",
-  "status": "new",
-  "created_at": "2026-02-08T10:30:00Z",
-  "updated_at": "2026-02-08T10:30:00Z",
-  "description": "Ensure submodules are completely encapsulated, portable for local environments, and ready for AWS deployment with standardized scripts and documentation."
-}
