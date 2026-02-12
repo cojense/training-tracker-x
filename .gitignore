@@ -36,10 +36,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # --- AI Agents & Caches ---
-.gemini/
+.gemini/logs/
 .claude/
-conductor/tracks/*
-conductor/code_styleguides/*
+conductor/tracks/
+conductor/code_styleguides/
 examples/
 *.md.template
 
