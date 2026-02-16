@@ -2,6 +2,12 @@
 
 # Root orchestration script for ShyftDev Training Tracker
 
+# Default settings
+NATIVE=false
+START_BACKEND=false
+START_GUI=false
+ALL_SERVICES=true
+
 show_help() {
     echo "Usage: ./run.bash [option]"
     echo ""
@@ -9,52 +15,81 @@ show_help() {
     echo "  --backend    Start only the Flask API (backend)"
     echo "  --gui        Start only the React GUI (frontend)"
     echo "  --all        Start both backend and frontend (default)"
+    echo "  --native     Run without Docker (requires local environment setup)"
     echo "  --help       Show this help message"
 }
 
+# Parse arguments
+for arg in "$@"; do
+    case $arg in
+        --native)
+            NATIVE=true
+            ;;
+        --backend)
+            START_BACKEND=true
+            ALL_SERVICES=false
+            ;;
+        --gui)
+            START_GUI=true
+            ALL_SERVICES=false
+            ;;
+        --all)
+            START_BACKEND=true
+            START_GUI=true
+            ALL_SERVICES=false
+            ;;
+        --help)
+            show_help
+            exit 0
+            ;;
+    esac
+done
+
+# If no specific service was requested, start both
+if [ "$ALL_SERVICES" = true ]; then
+    START_BACKEND=true
+    START_GUI=true
+fi
+
 cleanup() {
+    echo ""
     echo "Stopping all services..."
-    docker-compose down
-    # Kill the entire process group to ensure children die
-    kill -- -$$ 2>/dev/null
+    if [ "$NATIVE" = true ]; then
+        # Terminate background jobs
+        jobs -p | xargs kill 2>/dev/null
+    else
+        docker-compose down
+    fi
     exit
 }
 
 trap cleanup SIGINT SIGTERM
 
-# Ensure a clean start by taking down any existing docker-compose services
-docker-compose down
+if [ "$NATIVE" = true ]; then
+    echo "Starting in NATIVE mode..."
+    
+    if [ "$START_BACKEND" = true ]; then
+        echo "Launching Backend..."
+        (cd training-tracker && ./run.bash --native) &
+    fi
 
-START_BACKEND=false
-START_GUI=false
-
-if [ $# -eq 0 ] || [ "$1" == "--all" ]; then
-    START_BACKEND=true
-    START_GUI=true
-elif [ "$1" == "--backend" ]; then
-    START_BACKEND=true
-elif [ "$1" == "--gui" ]; then
-    START_GUI=true
-elif [ "$1" == "--help" ]; then
-    show_help
-    exit 0
+    if [ "$START_GUI" = true ]; then
+        echo "Launching Frontend..."
+        (cd training-tracker-gui && ./run.bash --native) &
+    fi
+    
+    # Wait for background processes
+    wait
 else
-    echo "Unknown option: $1"
-    show_help
-    exit 1
-fi
+    echo "Starting in DOCKER mode..."
+    # Ensure a clean start by taking down any existing services
+    docker-compose down
 
-if [ "$START_BACKEND" = true ]; then
-    echo "Starting Backend..."
-    # Delegate to backend run.bash (using docker by default as per existing script)
-    # However, if native is preferred for local dev, we might want to check.
-    # The spec says: 'Root orchestration ... delegates to submodule run.bash scripts'
-    (cd training-tracker && ./run.bash) &
+    if [ "$START_BACKEND" = true ] && [ "$START_GUI" = true ]; then
+        docker-compose up --build
+    elif [ "$START_BACKEND" = true ]; then
+        docker-compose up --build backend
+    elif [ "$START_GUI" = true ]; then
+        docker-compose up --build frontend
+    fi
 fi
-
-if [ "$START_GUI" = true ]; then
-    echo "Starting Frontend..."
-    (cd training-tracker-gui && ./run.bash) &
-fi
-
-wait

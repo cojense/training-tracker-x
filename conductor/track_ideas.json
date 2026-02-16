@@ -4,5 +4,9 @@
     "Optimization of existing component logic beyond what is necessary for file relocation and structural organization.",
     "Creation of new features or modification of existing application functionality.",
     "Backend bug: Fix 500 Internal Server Error when recording training events via /api/events endpoint."
+  ],
+  "view_consolidation_out_of_scope_20260212": [
+    "Creating new components in `components/` for extracted shared logic. This is explicitly an \"Inline Consolidation\" phase.",
+    "Implementing new features or modifying existing business logic beyond what is required for view consolidation."
   ]
 }

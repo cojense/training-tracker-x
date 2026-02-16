@@ -13,8 +13,15 @@
 3. **Draft Plan:** Create/Update plan.md with granular tasks.  
 4. **GATE 1 (Responsiveness Check):**  
    * **STOP.** Display the generated plan.  
-   * **ASK:** "I have drafted the plan. Does this match your intent? (Type 'yes' to proceed or provide corrections)."  
-   * **Wait** for explicit confirmation.
+       *   **ASK:** "I have drafted the plan. Does this match your intent? (Type 'yes' to proceed or provide corrections)."  
+       *   **Wait** for explicit confirmation.
+    
+   5. **Out-of-Scope Capture Protocol:**  
+      * **Context:** After `spec.md` is approved, check for an "Out of Scope" section.
+      * **Action:** If "Out of Scope" items exist, ask the user: "The spec for this track includes 'Out of Scope' items. Would you like to add these to the `track_ideas.json` queue for future consideration? (yes/no)"
+      * **Logic:**  
+        * If 'yes', read `conductor/track_ideas.json`, generate a unique key (e.g., `<track_id>_out_of_scope`), append the items, write the file, and confirm.
+        * If 'no', proceed.
 
 ## **Phase 2: Implementation (The Staging Loop)**
 
