@@ -2,9 +2,10 @@ services:
   backend:
     build:
       context: ./training-tracker
-      target: deploy_container
+      target: development
     environment:
       - FLASK_ENV=development
+      - FLASK_APP=trainingbackend.tracker
       - APP_SECRET=dev-secret-change-in-production
       - SQLITE_WAL=false
       - CONNECT_STRING=sqlite:////opt/trainingtracker/db/training.db
@@ -19,6 +20,8 @@ services:
       retries: 3
     volumes:
       - ./training-tracker/db:/opt/trainingtracker/db
+      - ./training-tracker/trainingbackend:/opt/trainingtracker/trainingbackend
+      - ./training-tracker/sql:/opt/trainingtracker/sql
     command:
       - sh
       - -c
@@ -38,14 +41,22 @@ services:
           sqlite3 "$$DB_FILE" < /opt/trainingtracker/sql/comprehensive_seed.sql
           echo "Database initialized successfully."
         fi
-        exec gunicorn --bind=0.0.0.0:5001 --workers=2 trainingbackend.tracker:app
+        exec flask run --host=0.0.0.0 --port=5001 --debug --reload
 
   frontend:
     build:
       context: ./training-tracker-gui
+      target: development
       args:
         - VITE_API_BASE_URL=http://localhost:5001/api
+    environment:
+      - VITE_API_BASE_URL=http://localhost:5001/api
     ports:
-      - "8080:80"
+      - "8080:5173"
+    volumes:
+      - ./training-tracker-gui/src:/app/src
+      - ./training-tracker-gui/public:/app/public
+      - ./training-tracker-gui/index.html:/app/index.html
+      - ./training-tracker-gui/vite.config.ts:/app/vite.config.ts
     depends_on:
       - backend
